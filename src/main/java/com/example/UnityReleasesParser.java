@@ -67,6 +67,7 @@ public class UnityReleasesParser {
             String version = node.getString("version");
             Matcher matcher = pattern.matcher(version);
             if (matcher.matches()) {
+                version = version.replace(".", "_");
                 versions.add(version);
                 System.out.println(version);
             }
